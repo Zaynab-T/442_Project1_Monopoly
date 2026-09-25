@@ -323,15 +323,19 @@ public class GameMaster {
 		if(cell instanceof CardCell) {
 		    gui.setDrawCardEnabled(true);
 		} else{
-			if(cell.isAvailable()) {
-				int price = cell.getPrice();
-				if(price <= player.getMoney() && price > 0) {
-					gui.enablePurchaseBtn(playerIndex);
-				}
-			}	
+			checkAndEnablePurchase(player, cell, playerIndex);	
 			gui.enableEndTurnBtn(playerIndex);
 		}
         gui.setTradeEnabled(turn, false);
+	}
+
+	private void checkAndEnablePurchase(Player player, Cell cell, int playerIndex) {
+		if(cell.isAvailable()) {
+			int price = cell.getPrice();
+			if(price <= player.getMoney() && price > 0) {
+				gui.enablePurchaseBtn(playerIndex);
+			}
+		}
 	}
 
 	/**
