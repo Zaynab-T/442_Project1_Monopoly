@@ -9,6 +9,10 @@ import javax.swing.*;
 
 import edu.towson.cis.cosc442.project1.monopoly.*;
 
+/**
+ * GUITradeDialog is a modal dialog that allows players to trade properties in the Monopoly game.
+ * It provides a user interface for selecting sellers, properties, and specifying the trade amount.
+ */
 public class GUITradeDialog extends JDialog implements TradeDialog {
     /**
 	 * 
@@ -20,6 +24,10 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
     private TradeDeal deal;
     private JTextField txtAmount;
     
+    /**
+     * Constructs a modal dialog for trading properties with the specified parent frame.
+     * @param parent the parent frame for this dialog
+     */
     public GUITradeDialog(Frame parent) {
         super(parent);
         
@@ -48,12 +56,20 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
         
         btnCancel.addActionListener(new ActionListener(){
             @SuppressWarnings("deprecation")
+			/**
+			 * Handles the Cancel button click event to hide the dialog without creating a trade deal.
+			 * @param e the action event triggered by clicking the Cancel button
+			 */
 			public void actionPerformed(ActionEvent e) {
                 GUITradeDialog.this.hide();
             }
         });
         
         cboSellers.addItemListener(new ItemListener(){
+            /**
+             * Updates the property selection combo when the selected seller changes.
+             * @param e the item event triggered by changing the selected seller
+             */
             public void itemStateChanged(ItemEvent e) {
                 Player player = (Player)e.getItem();
                 updatePropertiesCombo(player);
@@ -62,6 +78,10 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
         
         btnOK.addActionListener(new ActionListener() {
             @SuppressWarnings("deprecation")
+			/**
+			 * Handles the Cancel button click event to hide the dialog without creating a trade deal.
+			 * @param e the action event triggered by clicking the Cancel button
+			 */
 			public void actionPerformed(ActionEvent e) {
                 int amount = 0;
                 try{
@@ -88,6 +108,9 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
         this.pack();
     }
 
+    /**
+     * Populates the sellers combo box with available players who can sell properties.
+     */
     private void buildSellersCombo() {
         List<?> sellers = GameMaster.instance().getSellerList();
         for (Iterator<?> iter = sellers.iterator(); iter.hasNext();) {
@@ -99,10 +122,18 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
         }
     }
 
+    /**
+     * Returns the trade deal created by this dialog, or null if none was created.
+     * @return the TradeDeal object representing the current trade deal
+     */
     public TradeDeal getTradeDeal() {
         return deal;
     }
 
+    /**
+     * Updates the properties combo box with the properties owned by the specified player and enables the OK button if the player has properties.
+     * @param player the player whose properties are to be displayed
+     */
     private void updatePropertiesCombo(Player player) {
         cboProperties.removeAllItems();
         Cell[] cells = player.getAllProperties();
