@@ -329,6 +329,12 @@ public class GameMaster {
         gui.setTradeEnabled(turn, false);
 	}
 
+	/**
+	 * Checks if the player can purchase the property at their current position and enables the purchase button if possible.
+	 * @param player The Player to check for property purchase eligibility.
+	 * @param cell The Cell representing the property to check.
+	 * @param playerIndex The index of the player in the players list.
+	 */
 	private void checkAndEnablePurchase(Player player, Cell cell, int playerIndex) {
 		if(cell.isAvailable()) {
 			int price = cell.getPrice();

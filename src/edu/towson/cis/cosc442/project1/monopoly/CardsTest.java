@@ -2,11 +2,18 @@ package edu.towson.cis.cosc442.project1.monopoly;
 
 import junit.framework.TestCase;
 
+/**
+ * CardsTest is a test class that extends TestCase to verify the functionality of card types in a Monopoly game.
+ * It sets up a game environment with a GameMaster and tests the card types for Community Chest and Chance cards.
+ */
 public class CardsTest extends TestCase {
     Card ccCard, chanceCard;
     
     GameMaster gameMaster;
 
+    /**
+     * Executes setUp.
+     */
     protected void setUp() {
         gameMaster = GameMaster.instance();
         gameMaster.setGameBoard(new GameBoardCCGainMoney());
@@ -18,6 +25,9 @@ public class CardsTest extends TestCase {
         gameMaster.getGameBoard().addCard(ccCard);
     }
     
+    /**
+     * Executes testCardType.
+     */
     public void testCardType() {
         gameMaster.drawCCCard();
         assertEquals(Card.TYPE_CC, ccCard.getCardType());

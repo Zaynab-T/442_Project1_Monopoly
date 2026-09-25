@@ -1,6 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+/**
+ * GameBoardFull is a subclass of GameBoard that initializes a complete Monopoly game board with all properties, railroads, utilities, special cells, and card decks.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardFull extends GameBoard {
+    /**
+     * Constructs a full Monopoly game board with all properties, railroads, utilities, special cells, and card decks initialized.
+     */
     public GameBoardFull() {
         super();
         PropertyCell dp1 = new PropertyCell();

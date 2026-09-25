@@ -2,10 +2,17 @@ package edu.towson.cis.cosc442.project1.monopoly;
 
 import junit.framework.TestCase;
 
+/**
+ * LoseMoneyCardTest is a test class for the MoneyCard functionality in the Monopoly game.
+ * It verifies that the MoneyCard correctly deducts money from a player when applied and that the GUI reflects this change.
+ */
 public class LoseMoneyCardTest extends TestCase {
     GameMaster gameMaster;
     Card loseMoneyCard;
 
+    /**
+     * Executes setUp.
+     */
     protected void setUp() {
 		gameMaster = GameMaster.instance();
 		gameMaster.setGameBoard(new GameBoardCCLoseMoney());
@@ -16,6 +23,9 @@ public class LoseMoneyCardTest extends TestCase {
 		gameMaster.getGameBoard().addCard(loseMoneyCard);
     }
     
+    /**
+     * Executes testLoseMoneyCardAction.
+     */
     public void testLoseMoneyCardAction() {
         int origMoney = gameMaster.getCurrentPlayer().getMoney();
 		Card card = gameMaster.drawCCCard();
@@ -24,6 +34,9 @@ public class LoseMoneyCardTest extends TestCase {
 		assertEquals(origMoney - 20, gameMaster.getCurrentPlayer().getMoney());
     }
     
+    /**
+     * Executes testLoseMoneyCardUI.
+     */
     public void testLoseMoneyCardUI() {
         gameMaster.movePlayer(0, 1);
         assertTrue(gameMaster.getGUI().isDrawCardButtonEnabled());

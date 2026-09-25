@@ -1,6 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+/**
+ * GameBoardUtility is a subclass of GameBoard that initializes a Monopoly game board with a specific configuration of cells, including properties, utilities, railroads, and special cells like Jail and Free Parking.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardUtility extends GameBoard {
+	/**
+	 * Constructs a GameBoardUtility instance initializing the board with predefined property, utility, railroad, jail, and other special cells configured with specific names, colors, prices, rents, and house prices.
+	 */
 	public GameBoardUtility() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

@@ -4,8 +4,17 @@ import javax.swing.JOptionPane;
 
 import edu.towson.cis.cosc442.project1.monopoly.*;
 
+/**
+ * The Main class serves as the entry point for the Monopoly game application.
+ * It initializes the game environment, prompts the user for input, and starts the game GUI and logic.
+ */
 public class Main {
 
+	/**
+	 * Prompts the user to input the number of players, validates the input, and sets it in the game master.
+	 * @param window The MainWindow instance used as the parent for dialog boxes
+	 * @return The valid number of players entered by the user
+	 */
 	private static int inputNumberOfPlayers(MainWindow window) {
 		int numPlayers = 0;
 		while(numPlayers <= 0 || numPlayers > GameMaster.MAX_PLAYER) {
@@ -28,6 +37,10 @@ public class Main {
 	}
 
 	@SuppressWarnings("deprecation")
+	/**
+	 * Initializes the game environment, processes command-line arguments to configure the game, and starts the game GUI and logic.
+	 * @param args Command-line arguments that may specify test mode and custom game board class
+	 */
 	public static void main(String[] args) {
 		GameMaster master = GameMaster.instance();
 		MainWindow window = new MainWindow();

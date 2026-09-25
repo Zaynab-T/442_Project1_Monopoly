@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 
 import edu.towson.cis.cosc442.project1.monopoly.GameMaster;
 
+/**
+ * UtilDiceRoll is a modal dialog that allows players to roll dice in a Monopoly game.
+ * It provides a user interface for rolling the dice and displays the result of the roll.
+ */
 public class UtilDiceRoll extends JDialog {
 	
 	/**
@@ -20,6 +24,10 @@ public class UtilDiceRoll extends JDialog {
 	private static final long serialVersionUID = 1L;
 
 	@SuppressWarnings("deprecation")
+	/**
+	 * Displays the dice roll dialog modally and returns the rolled dice value.
+	 * @return the total value of the dice roll from the dialog
+	 */
 	public static int showDialog() {
 		UtilDiceRoll dialog = new UtilDiceRoll();
 		dialog.show();
@@ -30,6 +38,9 @@ public class UtilDiceRoll extends JDialog {
 	private int diceValue;
 	private JLabel lblPrompt = new JLabel();
 
+	/**
+	 * Constructs a modal dialog for rolling dice with UI components and event handlers initialized.
+	 */
 	public UtilDiceRoll() {
 		setModal(true);
 		btnOK.setEnabled(false);
@@ -42,11 +53,19 @@ public class UtilDiceRoll extends JDialog {
 		contentPane.add(lblPrompt, BorderLayout.CENTER);
 		contentPane.add(pnlButtons, BorderLayout.SOUTH);
 		btnDice.addActionListener(new ActionListener(){
+			/**
+			 * Handles the action event triggered by the OK button to close the dialog.
+			 * @param arg0 the ActionEvent triggered by the OK button
+			 */
 			public void actionPerformed(ActionEvent arg0) {
 				rollDice();
 			}
 		});
 		btnOK.addActionListener(new ActionListener(){
+			/**
+			 * Handles the action event triggered by the OK button to close the dialog.
+			 * @param arg0 the ActionEvent triggered by the OK button
+			 */
 			public void actionPerformed(ActionEvent arg0) {
 				okClicked();
 			}
@@ -54,10 +73,16 @@ public class UtilDiceRoll extends JDialog {
 		this.pack();
 	}
 	
+	/**
+	 * Closes the dice roll dialog when the OK button is clicked.
+	 */
 	public void okClicked(){
 		this.dispose();
 	}
 	
+	/**
+	 * Rolls two dice using the GameMaster instance, updates the display, and adjusts button states accordingly.
+	 */
 	public void rollDice() {
 		int[] diceRoll = GameMaster.instance().rollDice();
 		this.diceValue = diceRoll[0] + diceRoll[1];

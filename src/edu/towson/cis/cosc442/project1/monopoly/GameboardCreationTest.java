@@ -6,8 +6,15 @@ import java.util.List;
 import junit.framework.TestCase;
 import edu.towson.cis.cosc442.project1.monopoly.gui.GameBoardUtil;
 
+/**
+ * GameboardCreationTest is a test class that extends TestCase to verify the correct creation and layout of the Monopoly game board.
+ * It includes tests for cell addition order and game board layout calculations.
+ */
 public class GameboardCreationTest extends TestCase{
 	
+	/**
+	 * Executes testCellAddOrder.
+	 */
 	public void testCellAddOrder() {
 		GameBoard board = new SimpleGameBoard();
 		List<?> northCells = GameBoardUtil.getNorthCells(board);
@@ -26,6 +33,9 @@ public class GameboardCreationTest extends TestCase{
 		assertEquals(0, eastCells.size());
 	}
 	
+	/**
+	 * Executes testCellAddOrder14.
+	 */
 	public void testCellAddOrder14() {
 		GameBoard board = new GameBoard14();
 		List<?> northCells = GameBoardUtil.getNorthCells(board);
@@ -52,6 +62,9 @@ public class GameboardCreationTest extends TestCase{
 		assertSame(board.queryCell("Yellow 2"), eastCells.get(1));
 	}
 	
+	/**
+	 * Executes testGameboardLayout.
+	 */
 	public void testGameboardLayout() {
 		assertEquals(
 				new Dimension(1, 0), GameBoardUtil.calculateDimension(6));

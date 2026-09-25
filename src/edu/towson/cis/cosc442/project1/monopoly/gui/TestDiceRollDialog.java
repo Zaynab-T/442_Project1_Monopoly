@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
+/**
+ * TestDiceRollDialog is a modal dialog that allows users to input a dice roll amount for testing purposes in a Monopoly game.
+ * It provides a user interface with an input field for the amount and OK/Cancel buttons to confirm or cancel the input.
+ */
 public class TestDiceRollDialog extends JDialog {
     /**
 	 * 
@@ -22,6 +25,10 @@ public class TestDiceRollDialog extends JDialog {
     private JTextField txtDiceRoll;
     private int[] diceRoll;
     
+    /**
+     * Constructs a modal dialog for inputting a dice roll amount with OK and Cancel buttons.
+     * @param parent the parent frame for this dialog
+     */
     public TestDiceRollDialog(Frame parent) {
         super(parent);
         
@@ -41,6 +48,10 @@ public class TestDiceRollDialog extends JDialog {
         
         btnCancel.addActionListener(new ActionListener(){
             @SuppressWarnings("deprecation")
+			/**
+			 * Validates and processes the input amount to set the dice roll and then hides the dialog when OK is pressed.
+			 * @param e the action event triggered by clicking OK
+			 */
 			public void actionPerformed(ActionEvent e) {
                 TestDiceRollDialog.this.hide();
                 diceRoll = new int[2];
@@ -51,6 +62,10 @@ public class TestDiceRollDialog extends JDialog {
         
         btnOK.addActionListener(new ActionListener() {
             @SuppressWarnings("deprecation")
+			/**
+			 * Validates and processes the input amount to set the dice roll and then hides the dialog when OK is pressed.
+			 * @param e the action event triggered by clicking OK
+			 */
 			public void actionPerformed(ActionEvent e) {
                 int amount = 0;
                 try{
@@ -78,6 +93,10 @@ public class TestDiceRollDialog extends JDialog {
         this.pack();
     }
 
+    /**
+     * Returns the array representing the two dice roll values set by the dialog.
+     * @return the two-element integer array of dice roll results
+     */
     public int[] getDiceRoll() {
         return diceRoll;
     }

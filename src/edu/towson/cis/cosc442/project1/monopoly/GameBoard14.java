@@ -1,7 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * GameBoard14 is a subclass of GameBoard that initializes a Monopoly game board with a specific configuration of 14 property cells, each with predefined names, color groups, prices, rents, and house prices.
+ * This class sets up the board with a variety of colored properties to create a unique game experience.
+ */
 public class GameBoard14 extends GameBoard {
+	/**
+	 * Initializes a new game board with a predefined set of colored property cells configured with specific names, color groups, prices, rents, and house prices.
+	 */
 	public GameBoard14() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

@@ -1,11 +1,21 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+/**
+ * The FreeParkingCell class represents the "Free Parking" cell in a Monopoly game. 
+ * It extends the Cell class and provides specific behavior for the Free Parking cell.
+ */
 public class FreeParkingCell extends Cell {
 
+	/**
+	 * Constructs a FreeParkingCell and sets its name to "Free Parking".
+	 */
 	public FreeParkingCell() {
 		setName("Free Parking");
 	}
 
+	/**
+	 * Performs no action when a player lands on the Free Parking cell.
+	 */
 	public void playAction() {
 		return;
 	}

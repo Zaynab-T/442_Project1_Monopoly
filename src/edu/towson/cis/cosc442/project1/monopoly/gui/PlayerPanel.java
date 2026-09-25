@@ -15,6 +15,11 @@ import javax.swing.border.BevelBorder;
 
 import edu.towson.cis.cosc442.project1.monopoly.*;
 
+/**
+ * PlayerPanel is a JPanel that displays information about a specific player in the Monopoly game.
+ * It includes buttons for player actions and labels to show the player's name, money, and owned properties.
+ * The panel updates dynamically based on the player's current state in the game.
+ */
 public class PlayerPanel extends JPanel {
 
     /**
@@ -36,6 +41,10 @@ public class PlayerPanel extends JPanel {
     
     private JTextArea txtProperty;
 
+    /**
+     * Constructs a PlayerPanel for the specified player with buttons and labels to interact with and display player information.
+     * @param player The Player object whose information and actions this panel represents
+     */
     public PlayerPanel(Player player) {
         JPanel pnlAction = new JPanel();
         JPanel pnlInfo = new JPanel();
@@ -96,36 +105,60 @@ public class PlayerPanel extends JPanel {
         setBorder(new BevelBorder(BevelBorder.RAISED));
 
         btnRollDice.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnRollDiceClicked();
             }
         });
 
         btnEndTurn.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnEndTurnClicked();
             }
         });
 
         btnPurchaseProperty.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnPurchasePropertyClicked();
             }
         });
 
         btnBuyHouse.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnBuyHouseClicked();
             }
         });
 
         btnGetOutOfJail.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnGetOutOfJailClicked();
             }
         });
 
         btnDrawCard.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 Card card = GameMaster.instance().btnDrawCardClicked();
                 JOptionPane
@@ -135,12 +168,19 @@ public class PlayerPanel extends JPanel {
         });
 
         btnTrade.addActionListener(new ActionListener() {
+            /**
+             * Handles the trade button click by delegating to the GameMaster instance.
+             * @param e The ActionEvent triggered by clicking the trade button
+             */
             public void actionPerformed(ActionEvent e) {
                 GameMaster.instance().btnTradeClicked();
             }
         });
     }
 
+    /**
+     * Updates the panel to show the current player's name, money, and owned properties.
+     */
     public void displayInfo() {
         lblName.setText(player.getName());
         lblMoney.setText("$ " + player.getMoney());
@@ -152,58 +192,114 @@ public class PlayerPanel extends JPanel {
         txtProperty.setText(buf.toString());
     }
     
+    /**
+     * Returns whether the buy house button is currently enabled.
+     * @return True if the buy house button is enabled; false otherwise.
+     */
     public boolean isBuyHouseButtonEnabled() {
         return btnBuyHouse.isEnabled();
     }
 
+    /**
+     * Returns whether the draw card button is currently enabled.
+     * @return True if the draw card button is enabled; false otherwise.
+     */
     public boolean isDrawCardButtonEnabled() {
         return btnDrawCard.isEnabled();
     }
 
+    /**
+     * Returns whether the end turn button is currently enabled.
+     * @return True if the end turn button is enabled; false otherwise.
+     */
     public boolean isEndTurnButtonEnabled() {
         return btnEndTurn.isEnabled();
     }
     
+    /**
+     * Returns whether the get out of jail button is currently enabled.
+     * @return True if the get out of jail button is enabled; false otherwise.
+     */
     public boolean isGetOutOfJailButtonEnabled() {
         return btnGetOutOfJail.isEnabled();
     }
     
+    /**
+     * Returns whether the purchase property button is currently enabled.
+     * @return True if the purchase property button is enabled; false otherwise.
+     */
     public boolean isPurchasePropertyButtonEnabled() {
         return btnPurchaseProperty.isEnabled();
     }
     
+    /**
+     * Returns whether the roll dice button is currently enabled.
+     * @return True if the roll dice button is enabled; false otherwise.
+     */
     public boolean isRollDiceButtonEnabled() {
         return btnRollDice.isEnabled();
     }
 
+    /**
+     * Returns whether the trade button is currently enabled.
+     * @return True if the trade button is enabled; false otherwise.
+     */
     public boolean isTradeButtonEnabled() {
         return btnTrade.isEnabled();
     }
 
+    /**
+     * Enables or disables the buy house button.
+     * @param b A boolean indicating whether the buy house button should be enabled
+     */
     public void setBuyHouseEnabled(boolean b) {
         btnBuyHouse.setEnabled(b);
     }
 
+    /**
+     * Enables or disables the draw card button.
+     * @param b A boolean indicating whether the draw card button should be enabled
+     */
     public void setDrawCardEnabled(boolean b) {
         btnDrawCard.setEnabled(b);
     }
 
+    /**
+     * Enables or disables the end turn button.
+     * @param enabled A boolean indicating whether the end turn button should be enabled
+     */
     public void setEndTurnEnabled(boolean enabled) {
         btnEndTurn.setEnabled(enabled);
     }
 
+    /**
+     * Enables or disables the get out of jail button.
+     * @param b A boolean indicating whether the get out of jail button should be enabled
+     */
     public void setGetOutOfJailEnabled(boolean b) {
         btnGetOutOfJail.setEnabled(b);
     }
 
+    /**
+     * Enables or disables the purchase property button.
+     * @param enabled A boolean indicating whether the purchase property button should be enabled
+     */
     public void setPurchasePropertyEnabled(boolean enabled) {
         btnPurchaseProperty.setEnabled(enabled);
     }
 
+    /**
+     * Enables or disables the roll dice button.
+     * @param enabled A boolean indicating whether the roll dice button should be enabled
+     */
     public void setRollDiceEnabled(boolean enabled) {
         btnRollDice.setEnabled(enabled);
     }
 
+    /**
+     * Enables or disables the trade button.
+     * @param b A boolean indicating whether the trade button should be enabled
+     */
     public void setTradeEnabled(boolean b) {
         btnTrade.setEnabled(b);
     }

@@ -1,7 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * GameBoardCCMovePlayer is a subclass of GameBoard that initializes a Monopoly game board with two blue properties, a community chest cell, a jail cell, and a chance card cell.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells, as well as community chest and chance cards that move players to specific properties.
+ */
 public class GameBoardCCMovePlayer extends GameBoard {
+    /**
+     * Initializes a game board with two blue properties, community chest and chance card cells, and a jail cell, setting up cards and their attributes.
+     */
     public GameBoardCCMovePlayer() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

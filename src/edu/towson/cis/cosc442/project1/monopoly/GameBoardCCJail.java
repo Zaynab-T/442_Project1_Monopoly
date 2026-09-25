@@ -1,8 +1,14 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * GameBoardCCJail is a subclass of GameBoard that initializes a Monopoly game board with two blue properties, a community chest cell, a jail cell, and a chance card cell.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardCCJail extends GameBoard {
     
+    /**
+     * Constructs a GameBoardCCJail object initializing the game board with predefined property, card, and jail cells.
+     */
     public GameBoardCCJail() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

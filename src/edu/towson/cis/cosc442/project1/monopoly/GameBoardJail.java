@@ -1,6 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+/**
+ * GameBoardJail is a subclass of GameBoard that initializes a Monopoly game board with a specific configuration of cells, including properties, jail, and go-to-jail cells.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardJail extends GameBoard {
+	/**
+	 * Constructs a GameBoardJail instance and initializes its property, jail, and go-to-jail cells with predefined attributes and adds them to the game board.
+	 */
 	public GameBoardJail() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

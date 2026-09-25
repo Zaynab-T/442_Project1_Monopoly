@@ -1,6 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+/**
+ * GameBoardRailRoad is a subclass of GameBoard that initializes a Monopoly game board with a specific configuration of cells, including properties, railroads, and special cells like Jail and Free Parking.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardRailRoad extends GameBoard {
+	/**
+	 * Constructs a new GameBoardRailRoad instance and initializes it with specific property, railroad, and special cells configured with names, colors, prices, rents, and house prices.
+	 */
 	public GameBoardRailRoad() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

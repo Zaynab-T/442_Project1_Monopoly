@@ -1,7 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * GameBoardCCGainMoney is a subclass of GameBoard that initializes a Monopoly game board with two blue properties, a community chest cell, a jail cell, and a chance card cell.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells, as well as community chest and chance cards that provide money gain to players.
+ */
 public class GameBoardCCGainMoney extends GameBoard {
+    /**
+     * Initializes the game board with properties, cells, and cards configured for a Monopoly game featuring Community Chest money gain cards.
+     */
     public GameBoardCCGainMoney() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

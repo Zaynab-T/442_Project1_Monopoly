@@ -1,7 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * GameBoardCCLoseMoney is a subclass of GameBoard that initializes a Monopoly game board with specific cells and cards configured to include Community Chest and Chance cards that cause players to lose money.
+ * This class sets up the board with predefined names, colors, prices, rents, and house prices for the various cells.
+ */
 public class GameBoardCCLoseMoney extends GameBoard {
+    /**
+     * Initializes a game board with specific cells and cards configured to include Community Chest and Chance cards that cause players to lose money.
+     */
     public GameBoardCCLoseMoney() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

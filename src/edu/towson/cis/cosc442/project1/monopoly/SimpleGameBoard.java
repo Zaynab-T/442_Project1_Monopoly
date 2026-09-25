@@ -1,7 +1,13 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-
+/**
+ * Represents a simple game board for a Monopoly game, containing a predefined set of property cells.
+ * This class extends the GameBoard class and initializes five PropertyCell objects with specific attributes.
+ */
 public class SimpleGameBoard extends GameBoard {
+	/**
+	 * Initializes a SimpleGameBoard by creating and configuring five PropertyCell objects and adding them to the board.
+	 */
 	public SimpleGameBoard() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

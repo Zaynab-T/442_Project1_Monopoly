@@ -4,14 +4,24 @@ import edu.towson.cis.cosc442.project1.monopoly.gui.GoCellInfoFormatter;
 import edu.towson.cis.cosc442.project1.monopoly.gui.InfoFormatter;
 import junit.framework.TestCase;
 
+/**
+ * CellInfoFormatterTest is a test class that verifies the functionality of the InfoFormatter and its associated cell formatters, including GoCellInfoFormatter and PropertyCell formatting.
+ * It contains unit tests to ensure that the information strings for different types of cells are formatted correctly.
+ */
 public class CellInfoFormatterTest extends TestCase {
     
+    /**
+     * Tests that the GoCellInfoFormatter correctly formats the information string for a GoCell.
+     */
     public void testGoCellTest() {
         GoCell cell = new GoCell();
         String goLabel = GoCellInfoFormatter.GO_CELL_LABEL;
         assertEquals(goLabel, InfoFormatter.cellInfo(cell));
     }
     
+    /**
+     * Tests that the InfoFormatter correctly formats the HTML information string for a PropertyCell including its name, color, value, owner, and number of houses.
+     */
     public void testPropertyCellText() {
         String propertyName = "Blue 1";
         String propertyColor = "blue";
